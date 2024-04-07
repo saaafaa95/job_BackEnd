@@ -88,7 +88,7 @@ class PostController extends AbstractController
     }
 
 
-    #[Route('/updatepost/{id}', name : 'update' ,methods:'POST')]//post taba3th en securete
+    #[Route('/update_post/{id}', name : 'update_post' ,methods:'POST')]
     public function update_post(Request $request, int $id):Response
     {    $data=json_decode($request->getContent(), true);
          $post = $this->manager->getRepository(post:: class)->findOneBy(["id" => $id , "isdeleted" => null]);
